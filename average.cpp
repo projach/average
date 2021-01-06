@@ -31,9 +31,9 @@ double fillArray(int grades[],double percentage[],int pointer){
     int sum = 0;
     for (int i = 0; i < pointer; ++i) {
         while (true) {
-            cout << "Give grade(from 0-20): ";
+            cout << "Give grade(from 0-100): ";
             cin >> grades[i];
-            if (grades[i]>=0 && grades[i] <=20) {
+            if (grades[i]>=0 && grades[i] <=100) {
                 break;
             }
             cout << "Invalid grade!!" << "\n";
@@ -41,7 +41,7 @@ double fillArray(int grades[],double percentage[],int pointer){
         while (true){
             cout << "Give grade percentage(max of all percentages sum is 100): ";
             cin >> percentage[i];
-            if (percentage[i] >= 0 && percentage[i] <= 100){
+            if (percentage[i] > 1 && percentage[i] <= 100){
                 percentage[i] /= 100;
                 double n = grades[i] * percentage[i];
                 sum += n;
@@ -58,9 +58,9 @@ double fillArray(int grades[],int pointer){
     int sum = 0;
     for (int i = 0; i < pointer; ++i) {
         while (true) {
-            cout << "Give grade(from 0-20): ";
+            cout << "Give grade(from 0-100): ";
             cin >> grades[i];
-            if (grades[i]>=0 && grades[i] <=20) {
+            if (grades[i]>=0 && grades[i] <=100) {
                 sum += grades[i];
                 break;
             }
