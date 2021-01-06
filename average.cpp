@@ -28,7 +28,7 @@ void printArray(int grades[],int pointer){
 }
 
 double fillArray(int grades[],double percentage[],int pointer){
-    int sum = 0;
+    int sum = 0, percentageSum = 0;
     for (int i = 0; i < pointer; ++i) {
         while (true) {
             cout << "Give grade(from 0-100): ";
@@ -41,6 +41,12 @@ double fillArray(int grades[],double percentage[],int pointer){
         while (true){
             cout << "Give grade percentage(max of all percentages sum is 100): ";
             cin >> percentage[i];
+            percentageSum += percentage[i];
+            if (percentageSum > 100){
+                percentageSum -= percentage[i];
+                cout << "The percentage exceeds the 100%" << "\n";
+                continue;
+            }
             if (percentage[i] > 1 && percentage[i] <= 100){
                 percentage[i] /= 100;
                 double n = grades[i] * percentage[i];
